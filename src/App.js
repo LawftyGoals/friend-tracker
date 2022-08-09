@@ -2,28 +2,35 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const myProfileData = {
+    name:'Shaun Wassel',
+    profilePicUrl: `${process.env.PUBLIC_URL}/my-profile-pic.png`,
+    age: 100,
+    bio: 'I like to program and eat food.',
+    birthday: 'March 1',
+    interests: ['Programming', 'Data Science']
+
+  }  
+
   return (
     <div>
       <h1>Friend Tracker</h1>
       <div>
         <img
-          src={process.env.PUBLIC_URL + '/my-profile-pic.png'}
-          alt = "Shaun Smiling"
+          src={myProfileData.profilePicUrl}
+          alt = {`${myProfileData.name} smiling`}
           height="200" />
           <h2>My Profile</h2>
           <h3>Name</h3>
-          <p>Oli</p>
+          <p>{myProfileData.name}</p>
           <h3>Age</h3>
-          <p>100</p>
+          <p>{myProfileData.age}</p>
           <h3>Bio</h3>
-          <p>I like to program and eat food.</p>
+          <p>{myProfileData.bio}</p>
           <h3>Birthday</h3>
-          <p>August 1st</p>
+          <p>{myProfileData.birthday}</p>
           <h3>Interests</h3>
-          <ul>
-            <li>Programming</li>
-            <li>Data Science</li>
-          </ul>
+          <p>{myProfileData.interests.join(', ')}</p>
       </div>
     </div>
 
